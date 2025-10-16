@@ -21,10 +21,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
-    - name: Set up Python ${{ strategy.python-version }}
+    - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v5
       with:
-        python-version: "${{ strategy.python-version }}"
+        python-version: "${{ matrix.python-version }}"
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
